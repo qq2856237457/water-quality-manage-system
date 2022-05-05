@@ -8,7 +8,7 @@
         <div class="login">
           <el-form ref="form" :model="form" :rules="rules">
             <el-form-item>
-              <p style="font-weight: bold; font-size: 32px;">水质智能监测与管理平台</p>
+              <p style="font-weight: bold; font-size: 32px;">基于GraphQL的水质监测平台</p>
             </el-form-item>
             <el-form-item prop="username" style="margin-top: 50px;">
               <el-input v-model="form.username" style="width:80%;" placeholder="请输入用户名" clearable></el-input>

@@ -90,7 +90,7 @@ function index() {
         text: ''
       },
       legend: {
-        data: ['outfall1', 'outfall2','outfall3','outfall4']
+        data: ['设备1', '设备2','设备3','设备4']
       },
       radar: {
         // shape: 'circle',
@@ -111,19 +111,19 @@ function index() {
           data: [
             {
               value: [6.5,2.5,1000,450,250,70,2.2],
-              name: 'outfall1'
+              name: '设备1'
             },
             {
               value: [8.2,3.5,1600,250,90,80,1.1],
-              name: 'outfall2'
+              name: '设备2'
             },
             {
               value: [7.0,1.1,500,100,60,60,2.5],
-              name: 'outfall3'
+              name: '设备3'
             },
             {
               value: [5.6,4.5,1300,380,350,80,0.4],
-              name: 'outfall4'
+              name: '设备4'
             },
           ]
         }
@@ -275,25 +275,25 @@ function index() {
         {
         type: 'line',
         smooth: true, // 圆滑的线
-        name: '排水口1',
+        name: '设备1',
         data: yearData[0].data[0]
       },
       {
         type: 'line',
         smooth: true, // 圆滑的线
-        name: '排水口2',
+        name: '设备2',
         data: yearData[0].data[1]
       },
       {
         type: 'line',
         smooth: true, // 圆滑的线
-        name: '排水口3',
+        name: '设备3',
         data: yearData[0].data[2]
       },
       {
         type: 'line',
         smooth: true, // 圆滑的线
-        name: '排水口4',
+        name: '设备4',
         data: yearData[0].data[3]
       },
       
@@ -391,7 +391,7 @@ function index() {
         }
       }],
       series: [{
-        name: '排水口1',
+        name: '设备1',
         type: 'line',
         smooth: true, // 圆滑的线
         // 单独修改当前线条的样式
@@ -434,7 +434,7 @@ function index() {
         data: [70,72,75,74,73,72,75,76,75,73,72,71]
       },
       {
-        name: '排水口2',
+        name: '设备2',
         type: 'line',
         smooth: true, // 圆滑的线
         // 单独修改当前线条的样式
@@ -477,7 +477,7 @@ function index() {
         data: [62,65,63,60,60,62,63,65,65,67,65,62]
       },
       {
-        name: '排水口3',
+        name: '设备3',
         type: 'line',
         smooth: true, // 圆滑的线
         // 单独修改当前线条的样式
@@ -520,7 +520,7 @@ function index() {
         data: [90,92,95,96,95,94,92,91,89,87,87,90]
       },
       {
-        name: "排水口4",
+        name: "设备4",
         type: "line",
         smooth: true,
         lineStyle: {
@@ -714,7 +714,7 @@ function index() {
     var option;
     option = {
       xAxis: {
-        data: ['outfall1', 'outfall2', 'outfall3','outfall4']
+        data: ['设备1', '设备2', '设备3','设备4']
       },
       yAxis: {
         max:100
@@ -727,19 +727,19 @@ function index() {
         data: [
           {
             value: 75,
-            groupId: 'outfall1'
+            groupId: '设备1'
           },
           {
             value: 68,
-            groupId: 'outfall2'
+            groupId: '设备2'
           },
           {
             value: 92,
-            groupId: 'outfall3'
+            groupId: '设备3'
           },
           {
             value: 55,
-            groupId: 'outfall4'
+            groupId: '设备4'
           }
         ],
         universalTransition: {
@@ -750,7 +750,7 @@ function index() {
     };
     const drilldownData = [
       {
-        dataGroupId: 'outfall1',
+        dataGroupId: '设备1',
         data: [
           ['ph值', 65],
           ['电导率', 70],
@@ -763,7 +763,7 @@ function index() {
       },
       
       {
-        dataGroupId: 'outfall2',
+        dataGroupId: '设备2',
         data: [
           ['ph值', 60],
           ['电导率', 65],
@@ -775,7 +775,7 @@ function index() {
         ]
       },
       {
-        dataGroupId: 'outfall3',
+        dataGroupId: '设备3',
         data: [
           ['ph值', 95],
           ['电导率', 85],
@@ -787,7 +787,7 @@ function index() {
         ]
       },
       {
-        dataGroupId: 'outfall4',
+        dataGroupId: '设备4',
         data: [
           ['ph值', 65],
           ['电导率', 70],

@@ -4,13 +4,13 @@
       <div style="height: calc(100vh - 100px); padding: 20px; box-sizing: border-box; background-color: #FFFFFF; border-radius: 4px; overflow-x: hidden; overflow-y: scroll;">
         <div style="text-align: center;">
           <el-image style="width: 100px; height: 100px;" :src="require('@/assets/images/yal.jpg')"></el-image>
-          <p style="font-size: 20px; font-weight: 500; margin-bottom: 0px;">杨艾霖</p>
-          <p style="font-size: 14px;">信达天下，自强不息</p>
+          <p style="font-size: 20px; font-weight: 500; margin-bottom: 0px;">文磊</p>
+          <p style="font-size: 14px;">天行健，君子以自强不息</p>
         </div>
         <div style="padding: 30px; padding-top: 10px; padding-bottom: 0px; font-size: 14px;">
-          <p><el-icon :size="14"><avatar /></el-icon>&nbsp;邮政管理</p>
-          <p><el-icon :size="14"><briefcase /></el-icon>&nbsp;南京邮电大学现代邮政学院</p>
-          <p><el-icon :size="14"><home-filled /></el-icon>&nbsp;南京市栖霞区</p>
+          <p><el-icon :size="14"><avatar /></el-icon>&nbsp;西南石油大学</p>
+          <p><el-icon :size="14"><briefcase /></el-icon>&nbsp;计算机科学学院</p>
+          <p><el-icon :size="14"><home-filled /></el-icon>&nbsp;物联网工程</p>
         </div>
         <el-divider></el-divider>
         <div style="font-size: 14px; padding-left: 20px;">
@@ -22,7 +22,7 @@
           <el-tag type="info" style="margin-right: 5px; margin-left: 5px; margin-top: 10px;">帅哥</el-tag>
           <el-tag type="info" style="margin-right: 5px; margin-left: 5px; margin-top: 10px;">高富帅</el-tag>
         </div>
-        <!-- 
+        
         <el-divider></el-divider>
         <div style="font-size: 14px; padding-left: 20px;">
           <p>项目</p>
@@ -32,7 +32,7 @@
           <el-tag type="info" style="margin-right: 5px; margin-left: 5px; margin-top: 10px;">陕西省安康市紫阳县城关镇双坪村</el-tag>
           <el-tag type="info" style="margin-right: 5px; margin-left: 5px; margin-top: 10px;">青海省海西自治州乌兰县柯柯镇</el-tag>
         </div>
-        -->
+       
       </div>
     </el-col>
     <el-col :span="18" style="padding-left: 5px;">
@@ -56,7 +56,7 @@
                     </el-form-item>
                     <el-form-item label="所在省市">
                       <el-select v-model="userInfoForm.province" placeholder="Select" style="100%;" clearable>
-                        <el-option key="南京市" label="南京市" value="南京市">
+                        <el-option key="成都市" label="成都市" value="成都市">
                         </el-option>
                       </el-select>
                     </el-form-item>
@@ -97,12 +97,12 @@ export default {
     return {
       activeTab: 'tab1',
       userInfoForm: {
-        username: '杨艾霖',
-        profile: '信达天下，自强不息',
+        username: '文磊',
+        profile: '天行健，君子以自强不息',
         nation: '中国',
-        province: '江苏',
-        email: '2108119690@qq.com',
-        phone: '18629881669',
+        province: '成都',
+        email: '0111qwejq@136.com',
+        phone: '18603211669',
       },
     }
   },

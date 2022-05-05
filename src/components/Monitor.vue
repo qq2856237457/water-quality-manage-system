@@ -89,7 +89,7 @@
                                      column="2"
                                      style="padding: 20px 20px 0px 20px;"
                                      border>
-                      <el-descriptions-item label="排水口:">{{ name }}</el-descriptions-item>
+                      <el-descriptions-item label="监测点:">{{ name }}</el-descriptions-item>
                       <el-descriptions-item label="污水类别:">{{ waterSourceType }}</el-descriptions-item>
                       <el-descriptions-item label="水质分类:">{{ waterQaulityType }}</el-descriptions-item>
                       <el-descriptions-item label="项目地址:">{{ address }}</el-descriptions-item>
@@ -188,14 +188,14 @@ import { ref } from "vue"
 const items = [
   {
     id: 1,
-    name: "一号排水口",
-    coordinate: ["118.555598", "32.062651"],
+    name: "一号监测点",
+    coordinate: ["104.183273", "30.823704"],
     pictures: [
       "https://tse4-mm.cn.bing.net/th/id/OIP-C.yOG9gtZCTNWh_S-uQb2KngHaE7?w=263&h=180&c=7&r=0&o=5&pid=1.7",
     ],
     waterSourceType: "地表水",
     waterQaulityType: "三级水质",
-    address: "蓄水池一",
+    address: "龙井湖西侧",
     latestData: "2022-3-12 10:00:00",
     parameter1: 6.2,
     parameter2: 1000,
@@ -206,14 +206,14 @@ const items = [
   },
   {
     id: 2,
-    name: "二号排水口",
-    coordinate: ["118.475575", "32.041979"],
+    name: "二号监测点",
+    coordinate: ["104.185086","30.831175"],
     pictures: [
       "https://tse1-mm.cn.bing.net/th/id/OIP-C.e9EbfnIbVwvJqMf7Z3d5VwHaEo?w=281&h=180&c=7&r=0&o=5&pid=1.7",
     ],
     waterSourceType: "地表水",
     waterQaulityType: "四级水质",
-    address: "蓄水池二",
+    address: "明辨楼前",
     latestData: "2022-3-12 10:00:00",
     parameter1: 9.0,
     parameter2: 1500,
@@ -224,14 +224,14 @@ const items = [
   },
   {
     id: 3,
-    name: "三号排水口",
-    coordinate: ["118.524417", "32.084897"],
+    name: "三号监测点",
+    coordinate: ["104.1838","30.828203"],
     pictures: [
       "https://tse2-mm.cn.bing.net/th/id/OIP-C.kr9nmHIjxofCGtupxzQbkgHaE6?w=251&h=180&c=7&r=0&o=5&pid=1.7",
     ],
     waterSourceType: "地表水",
     waterQaulityType: "一级水质",
-    address: "蓄水池三",
+    address: "明理楼c区",
     latestData: "2022-3-12 10:00:00",
     parameter1: 7.0,
     parameter2: 600,
@@ -242,14 +242,14 @@ const items = [
   },
   {
     id: 4,
-    name: "四号排水口",
-    coordinate: ["118.32914", "32.015949"],
+    name: "四号监测点",
+    coordinate: ["104.184043","30.82359"],
     pictures: [
       "https://tse1-mm.cn.bing.net/th/id/R-C.fdcb3aaf30aa9ae3d1dc31b6a97a5265?rik=kyU0hT4YxFVXzQ&riu=http%3a%2f%2fpic0.huitu.com%2fres%2f20190112%2f1360054_20190112160153225132_1.jpg&ehk=OuI6pN1JBsHVVltZ9VbCtjSQEuVR2Nk62uk4jsCQ2ps%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"
       ],
     waterSourceType: "地表水",
     waterQaulityType: "五级水质",
-    address: "蓄水池四",
+    address: "龙井湖东侧",
     latestData: "2022-3-12 10:00:00",
     parameter1: 5.5,
     parameter2: 1300,
@@ -301,7 +301,7 @@ export default {
       map = new AMap.Map("project-map", {
         center: item.coordinate,
         resizeEnable: true,
-        zoom: 12,
+        zoom: 16,
       })
       var marker = new AMap.Marker({
         position: item.coordinate,

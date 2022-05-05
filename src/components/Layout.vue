@@ -9,7 +9,7 @@
       <el-menu style="height:940px" router :default-active="$route.path" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
         <el-menu-item id="logo">
           <el-icon style="font-size: 30px; color: #1d5299; margin-left: -15px;"><location /><img src="../assets/images/logo.png" style="background-size: cover; height: 50px; margin-top: -10px;"></el-icon>
-          <span style="font-size: 15px; font-weight: bold;margin-right:-5px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;水质智能监测与管理平台</span>
+          <span style="font-size: 15px; font-weight: bold;margin-right:-5px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基于GraphQL的水质监测平台</span>
         </el-menu-item>
         <el-menu-item index="/layout/home">
           <el-icon class="iconfont icon-shouye"><location /></el-icon>
