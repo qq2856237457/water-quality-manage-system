@@ -8,16 +8,32 @@
         <div class="login">
           <el-form ref="form" :model="form" :rules="rules">
             <el-form-item>
-              <p style="font-weight: bold; font-size: 32px;">基于GraphQL的水质监测平台</p>
+              <p style="font-weight: bold; font-size: 32px;">基于GraphQL的水质监测系统</p>
             </el-form-item>
             <el-form-item prop="username" style="margin-top: 50px;">
-              <el-input v-model="form.username" style="width:80%;" placeholder="请输入用户名" clearable></el-input>
+              <el-input 
+                v-model="form.username" 
+                style="width:80%;" 
+                placeholder="请输入用户名" 
+                clearable>
+              </el-input>
             </el-form-item>
             <el-form-item prop="password" style="margin-top: 50px;">
-              <el-input v-model="form.password" style="width:80%;" placeholder="请输入密码" show-password clearable></el-input>
+              <el-input 
+                v-model="form.password" 
+                style="width:80%;" 
+                placeholder="请输入密码" 
+                show-password 
+                clearable>
+              </el-input>
             </el-form-item>
             <el-form-item style="margin-top: 50px;">
-              <el-button type="primary" style="width:80%; font-weight: 500;" @click="onSubmit('form')">登  录</el-button>
+              <el-button 
+                type="primary" 
+                style="width:80%; 
+                font-weight: 500;" 
+                @click="onSubmit('form')">登  录
+              </el-button>
             </el-form-item>
           </el-form>
         </div>

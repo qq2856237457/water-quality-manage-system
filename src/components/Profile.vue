@@ -26,9 +26,9 @@
         <el-divider></el-divider>
         <div style="font-size: 14px; padding-left: 20px;">
           <p>项目</p>
-          <el-tag type="info" style="margin-right: 5px; margin-left: 5px; margin-top: 10px;">甘肃省庆阳市环县环城镇北郭塬村</el-tag>
-          <el-tag type="info" style="margin-right: 5px; margin-left: 5px; margin-top: 10px;">甘肃省庆阳市宁县早胜镇</el-tag>
-          <el-tag type="info" style="margin-right: 5px; margin-left: 5px; margin-top: 10px;">甘肃省庆阳市宁县米桥乡</el-tag>
+          <el-tag type="info" style="margin-right: 5px; margin-left: 5px; margin-top: 10px;">四川省成都市双流区江安河</el-tag>
+          <el-tag type="info" style="margin-right: 5px; margin-left: 5px; margin-top: 10px;">四川省成都市双流区南湖湿地公园</el-tag>
+          <el-tag type="info" style="margin-right: 5px; margin-left: 5px; margin-top: 10px;">四川省成都市温江区金马河</el-tag>
           <el-tag type="info" style="margin-right: 5px; margin-left: 5px; margin-top: 10px;">陕西省安康市紫阳县城关镇双坪村</el-tag>
           <el-tag type="info" style="margin-right: 5px; margin-left: 5px; margin-top: 10px;">青海省海西自治州乌兰县柯柯镇</el-tag>
         </div>

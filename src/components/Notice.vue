@@ -13,7 +13,13 @@
                 </el-select>
             </el-form-item>
             <el-form-item label="时间">
-                <el-date-picker v-model="formInline.date" type="datetimerange" start-placeholder="开始时间" end-placeholder="结束时间" :default-time="defaultTime1"></el-date-picker>
+                <el-date-picker 
+                  v-model="formInline.date" 
+                  type="datetimerange" 
+                  start-placeholder="开始时间" 
+                  end-placeholder="结束时间" 
+                  :default-time="defaultTime1">
+                </el-date-picker>
             </el-form-item>
             <el-form-item label="处理状态">
                 <el-select v-model="formInline.status" placeholder="处理状态">
