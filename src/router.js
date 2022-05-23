@@ -38,7 +38,6 @@ const router = createRouter({
                 { path: 'users', component: Users, name: '用户管理' },
                 { path: 'logs', component: Logs, name: '日志管理' },
                 { path: 'project', component: Project, name: '项目管理' },
-                
                 { path: '403', component: PermissionDenied, name: '没有权限' },
                 { path: '404', component: ResourceNotFound, name: '没有资源' },
             ]

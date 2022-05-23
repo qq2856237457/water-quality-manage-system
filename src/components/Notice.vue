@@ -29,7 +29,9 @@
                 </el-select>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" @click="onSubmit"><el-icon class="el-icon--left"><Search /></el-icon>查询</el-button>
+                <el-button type="primary" @click="onSearch">
+                  <el-icon class="el-icon--left"><Search /></el-icon>查询
+                </el-button>
             </el-form-item>
         </el-form>
         <el-divider style="margin-top: 15px;"></el-divider>
@@ -89,10 +91,10 @@
                   label="监测设备"
                   width="80">
                 </el-table-column>
-                <el-table-column
-                  label="操作"
-                  width="200">                
-                  <detailss></detailss>
+                <el-table-column label="操作" width="200">
+                  <template v-slot:default="scope">
+                        <detailss :is-edit="scope.row.isEdit"></detailss>
+                  </template>                
                 </el-table-column>
               </el-table>         
         </div>
@@ -116,7 +118,6 @@ export default {
   },
   data() {    
     return {
-      
       showModal: false,
       formInline: {
         name: '',
@@ -139,7 +140,8 @@ export default {
           "createTime": "2022-02-11 10:12:20",
           "creatorId": 1,
           "updateTime": "待处理",
-          "editorId": 1
+          "editorId": 1,
+          "isEdit": true
         },
         {
           "id": 2,
@@ -156,7 +158,8 @@ export default {
           "createTime": "2022-02-11 10:12:20",
           "creatorId": 1,
           "updateTime": "2022-02-11 10:12:20",
-          "editorId": 1
+          "editorId": 1,
+          "isEdit": false
         },
         {
           "id": 3,
@@ -173,7 +176,8 @@ export default {
           "createTime": "2022-02-11 10:12:20",
           "creatorId": 1,
           "updateTime": "无需处理",
-          "editorId": 1
+          "editorId": 1,
+          "isEdit": false
         },
         {
           "id": 4,
@@ -190,50 +194,120 @@ export default {
           "createTime": "2022-02-11 10:12:20",
           "creatorId": 1,
           "updateTime": "2022-02-11 10:12:20",
-          "editorId": 1
+          "editorId": 1,
+          "isEdit": false
         },
       ],
-      
+      baseData:[
+        {
+          "id": 1,
+          "title": "ph值",
+          "startTime": "2022-02-11 10:12:20",
+          "endTime": "2022-02-12 10:12:20",
+          "level": '三级水质',
+          "pollutionAnalyse": "有机废水",
+          "measure": "暂未处理",
+          "measureEffect": "较差",
+          "monitorPointNodeId": 1,
+          "monitorPointId": '一号设备',
+          "depth": 75,
+          "createTime": "2022-02-11 10:12:20",
+          "creatorId": 1,
+          "updateTime": "待处理",
+          "editorId": 1,
+          "isEdit": true
+        },
+        {
+          "id": 2,
+          "title": "ph值",
+          "startTime": "2022-02-11 10:12:20",
+          "endTime": "2022-02-12 10:12:20",
+          "level": '四级水质',
+          "pollutionAnalyse": "热污染废水",
+          "measure": "降低pH值",
+          "measureEffect": "较差",
+          "monitorPointNodeId": 1,
+          "monitorPointId": '二号设备',
+          "depth": 68,
+          "createTime": "2022-02-11 10:12:20",
+          "creatorId": 1,
+          "updateTime": "2022-02-11 10:12:20",
+          "editorId": 1,
+          "isEdit": false
+        },
+        {
+          "id": 3,
+          "title": "ph值",
+          "startTime": "2022-02-11 10:12:20",
+          "endTime": "2022-02-12 10:12:20",
+          "level": '一级水质',
+          "pollutionAnalyse": "无机废水",
+          "measure": "暂无需处理",
+          "measureEffect": "好",
+          "monitorPointNodeId": 1,
+          "monitorPointId": '三号设备',
+          "depth": 92,
+          "createTime": "2022-02-11 10:12:20",
+          "creatorId": 1,
+          "updateTime": "无需处理",
+          "editorId": 1,
+          "isEdit": false
+        },
+        {
+          "id": 4,
+          "title": "ph值",
+          "startTime": "2022-02-11 10:12:20",
+          "endTime": "2022-02-12 10:12:20",
+          "level": '五级水质',
+          "pollutionAnalyse": "重金属废水",
+          "measure": "加碱、过滤",
+          "measureEffect": "差",
+          "monitorPointNodeId": 1,
+          "monitorPointId": '四号设备',
+          "depth": 55,
+          "createTime": "2022-02-11 10:12:20",
+          "creatorId": 1,
+          "updateTime": "2022-02-11 10:12:20",
+          "editorId": 1,
+          "isEdit": false
+        },
+      ],
     }
   },
   methods: {
-    handleClickLook() {
-      this.$router.replace('/detailss')
-    },
-    handleClickEdit() {
-      this.$router.replace('/detailss')
-    },
-    open() {
-        this.$prompt('请输入要执行的操作', '提示', {
-          confirmButtonText: '确定',
-          cancelButtonText: '取消',
-        }).then(({ value }) => {
-          this.$message({
-            type: 'success',
-            message: '你的操作是: ' + value
-          });
-        }).catch(() => {
-          this.$message({
-            type: 'info',
-            message: '取消输入'
-          });       
-        });
+    onSearch() {
+      for(let i = 0; i < this.tableData.length; i++){
+        for(let j = 0; j < this.baseData.length; j++){
+          if(this.tableData[i].id == this.baseData[j].id){
+            this.baseData[j].isEdit = this.tableData[i].isEdit;
+          }
+        }
+        this.tableData[i].id
       }
+      if(this.formInline.status === '已处理'){
+        let tem = [];
+        for(let i = 0; i < this.baseData.length; i++ ){
+          if(this.baseData[i].isEdit){
+            tem.push(this.baseData[i])  
+          } 
+        }
+        this.tableData = tem;
+      }
+      else if(this.formInline.status === '未处理'){
+        let tem = [];
+        for(let i = 0; i < this.baseData.length; i++ ){
+          if(!this.baseData[i].isEdit){
+            tem.push(this.baseData[i])  
+          } 
+        }
+        this.tableData = tem;
+      }
+      else{
+        this.tableData = this.baseData;
+      }
+    }
   },
 
-  setup() {
-    const state = reactive({
-      value1: '',
-      value2: '',
-      defaultTime1: [new Date(2000, 1, 1, 12, 0, 0)], // '12:00:00'
-      defaultTime2: [
-        new Date(2000, 1, 1, 12, 0, 0),
-        new Date(2000, 2, 1, 8, 0, 0),
-      ], // '12:00:00', '08:00:00'
-    })
-
-    return toRefs(state)
-  },
 }
 </script>
 

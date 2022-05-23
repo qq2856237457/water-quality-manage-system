@@ -23,8 +23,7 @@ export default {
       this.addMarker()
     },
     async addMarker () {
-      // const { data } = await this.$http.get('/apis/markers.json')
-      
+      // 获取渲染数据
       const data = [
           {
             "id": 1,
@@ -67,39 +66,34 @@ export default {
             "equipmentStatus":"正常",
           }
       ];
-      
+      // 遍历所有数据，为每个数据创建一个map对象
       data.forEach(e => {
         var marker = new AMap.Marker({
           position: e.coordinate,
           icon: 'https://webapi.amap.com/theme/v1.3/markers/n/mark_b.png',
         });
         marker.setMap(map);
-
+      // 渲染到window上
         var infoWindow = new AMap.InfoWindow({
             content: this.createInfoWindow(e).join(""),
             offset: new AMap.Pixel(0, -35)
         });
-
         // 因为添加到infoWindow中绑定的是window的全局方法，所以这里需要将组件的局部方法赋值给全局方法
         if (!window.viewDetailInfo) {
           window.viewDetailInfo = this.viewDetailInfo;
         }
-
         //鼠标悬停marker弹出信息窗体
         AMap.event.addListener(marker, 'mouseover', function () {
           infoWindow.open(map, marker.getPosition());
         });
-
         //鼠标离开marker关闭信息窗体
         AMap.event.addListener(marker, 'mouseout', function () {
           infoWindow.close(map, marker.getPosition());
         });
-
         //鼠标点击marker
         AMap.event.addListener(marker, 'click', function () {
           viewDetailInfo()
         });
-        
       });
     },
     //构建自定义信息窗体

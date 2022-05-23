@@ -13,7 +13,7 @@
             </el-avatar>&nbsp;
             <el-dropdown>
                 <span class="el-dropdown-link" style="font-size: 14px;">
-                NJUPT&nbsp;&nbsp;<strong style="font-size: 18px;">⋮</strong>
+                文磊&nbsp;&nbsp;<strong style="font-size: 18px;">⋮</strong>
                 </span>
                 <template #dropdown>
                 <el-dropdown-menu>

@@ -10,7 +10,7 @@
       </el-option>
     </el-select>
     <el-switch
-      v-model="value1"
+      v-model="isEdit"
       active-text="已处理"
       inactive-text="未处理">
     </el-switch>   
@@ -24,9 +24,9 @@
 <script>
   export default {
     name:'detailss',
+    props:["isEdit"],
     data() {
       return {
-        value1: false,
         options: [{
           value: '选项1',
           label: '加碱中和'
@@ -50,7 +50,9 @@
         value: ''
       }
     },
-
+    mounted() {
+      // console.log(this);
+    }
   };
 </script>
 <style>

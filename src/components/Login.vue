@@ -53,7 +53,7 @@ export default {
   data() {
     return {
       form: {
-        username: 'NJUPT',
+        username: '文磊',
         password: '123456',
       },
       rules: {
@@ -78,7 +78,7 @@ export default {
     onSubmit(form) {
       this.$refs[form].validate((valid) => {
         if (valid) {
-          if ( this.form.username === 'NJUPT' && this.form.password === '123456') {
+          if ( this.form.username === '文磊' && this.form.password === '123456') {
             ElMessage({
               message: '登录成功，欢迎使用！',
               type: 'success',
